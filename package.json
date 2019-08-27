@@ -1,0 +1,105 @@
+{
+  "name": "clientconnect-help",
+  "version": "1.0.006",
+  "main": "index.js",
+  "author": "Mark Lindsay",
+  "scripts": {
+    "start": "node server.js",
+    "startDev": "webpack-dev-server  --env.debug",
+    "startHot": "webpack-dev-server  --env.debug --inline --hot",
+    "build": "webpack --mode production",
+    "test": "jest",
+    "test:s": "jest --silent",
+    "test:watch": "jest --watch",
+    "test:watch:s": "jest --watch --silent",
+    "test:coverage": "jest --coverage"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "body-parser": "^1.18.3",
+    "carbon-addons-cloud": "^3.4.2",
+    "carbon-addons-cloud-react": "^1.11.0",
+    "carbon-components": "^9.91.5",
+    "carbon-components-react": "^6.115.6",
+    "carbon-icons": "^7.0.6",
+    "cfenv": "^1.1.0",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.5",
+    "d3": "^5.5.0",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "i18next": "^11.3.6",
+    "i18next-browser-languagedetector": "^2.2.2",
+    "i18next-xhr-backend": "^1.5.1",
+    "papaparse": "^4.6.1",
+    "passport": "0.2.x",
+    "passport-idaas-openidconnect": "1.0.0",
+    "path": "^0.12.7",
+    "query-string": "^6.2.0",
+    "react": "^16.8.0-alpha.0",
+    "react-dom": "^16.8.0-alpha.0",
+    "react-flexbox-grid": "^2.1.0",
+    "react-grid-layout": "^0.16.6",
+    "react-html-parser": "^2.0.2",
+    "react-i18next": "^7.8.1",
+    "react-loadable": "^5.3.1",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-select": "^2.0.0",
+    "whatwg-fetch": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.46",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.54",
+    "@babel/preset-env": "^7.0.0-beta.46",
+    "@babel/preset-react": "^7.0.0-beta.46",
+    "babel-core": "^7.0.0-0",
+    "babel-jest": "^22.4.3",
+    "babel-loader": "^8.0.0-beta.0",
+    "babel-plugin-transform-dynamic-import": "^2.0.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "date-fns": "^1.30.1",
+    "enzyme": "^3.4.4",
+    "enzyme-adapter-react-16": "^1.2.0",
+    "enzyme-to-json": "^3.3.3",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^22.4.3",
+    "jest-localstorage-mock": "^2.2.0",
+    "node-sass": "^4.9.0",
+    "postcss-loader": "^2.1.5",
+    "react-test-renderer": "^16.3.2",
+    "regenerator-runtime": "^0.11.1",
+    "sass-loader": "^7.0.2",
+    "style-loader": "^0.21.0",
+    "webpack": "4.8.1",
+    "webpack-cli": "^2.1.3",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "jest": {
+    "setupFiles": [
+      "./test/jestsetup.js",
+      "jest-localstorage-mock"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "verbose": true,
+    "bail": false,
+    "collectCoverage": false,
+    "testURL": "http://localhost",
+    "modulePathIgnorePatterns": [
+      "sandbox",
+      "node_modules"
+    ],
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "moduleNameMapper": {
+      "react-i18next": "<rootDir>/__mocks__/reacti18nextMock.js",
+      "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
+      "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
+    }
+  }
+}
